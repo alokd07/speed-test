@@ -190,13 +190,12 @@ app.post('/api/video-info', async (req, res) => {
 
     // Get video info using youtube-dl
     const videoInfo = await youtubeDl(url, {
-      // cookies: cookiesPath,
+      cookies: cookiesPath,
       dumpSingleJson: true,
       noWarnings: true,
       noCallHome: true,
       preferFreeFormats: true,
       youtubeSkipDashManifest: true,
-      '--cookies-from-browser': 'chrome',
     });
 
     console.log("Video info retrieved successfully");
