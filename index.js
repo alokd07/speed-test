@@ -156,6 +156,8 @@ const { testSpeedHandler } = require('./api-handlers');
 const path = require('path');
 const fs = require('fs');
 
+const cookiesPath = path.resolve(__dirname, 'cookies.txt');
+
 require('dotenv').config();
 const corsOptions = {
   origin: '*',
@@ -187,6 +189,7 @@ app.post('/api/video-info', async (req, res) => {
 
     // Get video info using youtube-dl
     const videoInfo = await youtubeDl(url, {
+      cookiesPath: cookiesPath,
       dumpSingleJson: true,
       noWarnings: true,
       noCallHome: true,
@@ -268,6 +271,7 @@ app.get('/api/download', async (req, res) => {
 
     // Get video info - This is needed to get the title
     const videoInfo = await youtubeDl(url, {
+      cookiesPath: cookiesPath,
       dumpSingleJson: true,
       noWarnings: true,
       noCallHome: true,
@@ -287,6 +291,7 @@ app.get('/api/download', async (req, res) => {
 
       // Start the download process
       await youtubeDl(url, {
+        cookiesPath: cookiesPath,
         extractAudio: true,
         audioFormat: 'mp3',
         output: outputFile,
@@ -314,6 +319,7 @@ app.get('/api/download', async (req, res) => {
 
       // Start the download process
       await youtubeDl(url, {
+        cookiesPath: cookiesPath,
         format: format,
         output: outputFile,
         noWarnings: true,

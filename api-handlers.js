@@ -1,6 +1,7 @@
 const { getExecOutput } = require('./api-handlers-helpers');
 var os = require('os');
 
+
 exports.testSpeedHandler = async () => {
     // try {
     const testCommandOutput = await getExecOutput('fast --upload --json')
