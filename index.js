@@ -320,7 +320,7 @@ app.get('/api/download', async (req, res) => {
 
       // Start the download process
       await youtubeDl(url, {
-        // cookiesPath: cookiesPath,
+        cookiesPath: cookiesPath,
         format: format,
         output: outputFile,
         noWarnings: true,
