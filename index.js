@@ -149,7 +149,7 @@
 
 const express = require('express');
 const cors = require('cors');
-const youtubeDl = require('youtube-dl-exec');
+const youtubeDl = require('youtube-dl-exec').create('/usr/local/bin/yt-dlp');
 const app = express();
 const PORT = process.env.SERVER_PORT || 8000;
 const { testSpeedHandler } = require('./api-handlers');
