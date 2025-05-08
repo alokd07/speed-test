@@ -190,7 +190,7 @@ app.post('/api/video-info', async (req, res) => {
 
     // Get video info using youtube-dl
     const videoInfo = await youtubeDl(url, {
-      // cookiesPath: cookiesPath,
+      cookiesPath: cookiesPath,
       dumpSingleJson: true,
       noWarnings: true,
       noCallHome: true,
@@ -324,7 +324,7 @@ app.get('/api/download', async (req, res) => {
         format: format,
         output: outputFile,
         noWarnings: true,
-        noCallHome: true
+        noCallHome: true,
       });
 
       // Stream the file to the client and delete after
