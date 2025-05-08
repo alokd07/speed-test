@@ -190,7 +190,7 @@ app.post('/api/video-info', async (req, res) => {
 
     // Get video info using youtube-dl
     const videoInfo = await youtubeDl(url, {
-      cookiesPath: cookiesPath,
+      // cookiesPath: cookiesPath,
       dumpSingleJson: true,
       noWarnings: true,
       noCallHome: true,
@@ -272,7 +272,7 @@ app.get('/api/download', async (req, res) => {
 
     // Get video info - This is needed to get the title
     const videoInfo = await youtubeDl(url, {
-      cookiesPath: cookiesPath,
+      // cookiesPath: cookiesPath,
       dumpSingleJson: true,
       noWarnings: true,
       noCallHome: true,
@@ -292,7 +292,7 @@ app.get('/api/download', async (req, res) => {
 
       // Start the download process
       await youtubeDl(url, {
-        cookiesPath: cookiesPath,
+        // cookiesPath: cookiesPath,
         extractAudio: true,
         audioFormat: 'mp3',
         output: outputFile,
@@ -320,7 +320,7 @@ app.get('/api/download', async (req, res) => {
 
       // Start the download process
       await youtubeDl(url, {
-        cookiesPath: cookiesPath,
+        // cookiesPath: cookiesPath,
         format: format,
         output: outputFile,
         noWarnings: true,
