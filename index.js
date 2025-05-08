@@ -149,15 +149,16 @@
 
 const express = require('express');
 const cors = require('cors');
-const youtubeDl = require('youtube-dl-exec').create('/usr/local/bin/yt-dlp');
+const youtubeDl = require('youtube-dl-exec');
 const app = express();
 const PORT = process.env.SERVER_PORT || 8000;
 const { testSpeedHandler } = require('./api-handlers');
 const path = require('path');
 const fs = require('fs');
 
-const cookiesPath = path.resolve(__dirname, 'cookies.txt');
 
+const cookiesPath = path.resolve(__dirname, 'cookies.txt');
+console.log(cookiesPath)
 require('dotenv').config();
 const corsOptions = {
   origin: '*',
@@ -194,7 +195,7 @@ app.post('/api/video-info', async (req, res) => {
       noWarnings: true,
       noCallHome: true,
       preferFreeFormats: true,
-      youtubeSkipDashManifest: true
+      youtubeSkipDashManifest: true,
     });
 
     console.log("Video info retrieved successfully");

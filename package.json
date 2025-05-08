@@ -10,7 +10,7 @@
     "fast-cli": "^3.2.0",
     "network-speed": "^2.1.1",
     "nodemon": "^2.0.19",
-    "youtube-dl-exec": "^3.0.20",
+    "youtube-dl-exec": "^3.0.21",
     "ytdl-core": "^4.11.5",
     "ytdl-core-muxer": "^1.0.1"
   },
